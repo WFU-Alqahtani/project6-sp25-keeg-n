@@ -1,31 +1,30 @@
-// Standard French-style cards
+
 public class Card {
+    public enum Suites {NULL, SPADES, CLUBS, DIAMONDS, HEARTS}
+    public enum Ranks {NULL, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE}
 
-    // Suites
-    public enum suites {
-        NULL, SPADES, CLUBS, DIAMONDS, HEARTS
+    private Suites suit;
+    private Ranks rank;
+
+    public Card() {
+        this.suit = Suites.NULL;
+        this.rank = Ranks.NULL;
     }
 
-    // Ranks
-    public enum ranks {
-        NULL, two, three, four, five, six, seven, eight, nine, ten, jack, king, queen, ace
+    public Card(Suites s, Ranks r) {
+        this.suit = s;
+        this.rank = r;
     }
 
-    private suites suit;
-    private ranks rank;
-
-    Card(){
-        suit = suites.NULL;
-        rank = ranks.NULL;
+    public Suites getSuit() {
+        return suit;
     }
 
-    Card(suites s, ranks r){
-        suit = s;
-        rank = r;
+    public Ranks getRank() {
+        return rank;
     }
 
-    public void print_card(){
-        System.out.print(suit + ": " + rank);
+    public void printCard() {
+        System.out.println(suit + ": " + rank);
     }
-
 }
